@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7EC06331347D115009735CD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EC06321347D115009735CD /* main.cpp */; };
+		A7EC06331347D115009735CD /* du2_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EC06321347D115009735CD /* du2_main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +24,9 @@
 
 /* Begin PBXFileReference section */
 		A7EC062E1347D115009735CD /* DU2_PARSER */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DU2_PARSER; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7EC06321347D115009735CD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A7EC06321347D115009735CD /* du2_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = du2_main.cpp; sourceTree = "<group>"; };
 		A7EC06341347D115009735CD /* DU2_PARSER.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DU2_PARSER.1; sourceTree = "<group>"; };
+		A7EC063A1347D150009735CD /* du2_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = du2_parser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +59,8 @@
 		A7EC06311347D115009735CD /* DU2_PARSER */ = {
 			isa = PBXGroup;
 			children = (
-				A7EC06321347D115009735CD /* main.cpp */,
+				A7EC06321347D115009735CD /* du2_main.cpp */,
+				A7EC063A1347D150009735CD /* du2_parser.h */,
 				A7EC06341347D115009735CD /* DU2_PARSER.1 */,
 			);
 			path = DU2_PARSER;
@@ -114,7 +116,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EC06331347D115009735CD /* main.cpp in Sources */,
+				A7EC06331347D115009735CD /* du2_main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
