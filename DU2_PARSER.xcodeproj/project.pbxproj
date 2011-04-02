@@ -1,0 +1,201 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A7EC06331347D115009735CD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EC06321347D115009735CD /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A7EC062C1347D115009735CD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A7EC062E1347D115009735CD /* DU2_PARSER */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DU2_PARSER; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7EC06321347D115009735CD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A7EC06341347D115009735CD /* DU2_PARSER.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DU2_PARSER.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7EC062B1347D115009735CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7EC06231347D114009735CD = {
+			isa = PBXGroup;
+			children = (
+				A7EC06311347D115009735CD /* DU2_PARSER */,
+				A7EC062F1347D115009735CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7EC062F1347D115009735CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7EC062E1347D115009735CD /* DU2_PARSER */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7EC06311347D115009735CD /* DU2_PARSER */ = {
+			isa = PBXGroup;
+			children = (
+				A7EC06321347D115009735CD /* main.cpp */,
+				A7EC06341347D115009735CD /* DU2_PARSER.1 */,
+			);
+			path = DU2_PARSER;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7EC062D1347D115009735CD /* DU2_PARSER */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7EC06371347D115009735CD /* Build configuration list for PBXNativeTarget "DU2_PARSER" */;
+			buildPhases = (
+				A7EC062A1347D115009735CD /* Sources */,
+				A7EC062B1347D115009735CD /* Frameworks */,
+				A7EC062C1347D115009735CD /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DU2_PARSER;
+			productName = DU2_PARSER;
+			productReference = A7EC062E1347D115009735CD /* DU2_PARSER */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7EC06251347D114009735CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "MFF UK";
+			};
+			buildConfigurationList = A7EC06281347D114009735CD /* Build configuration list for PBXProject "DU2_PARSER" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A7EC06231347D114009735CD;
+			productRefGroup = A7EC062F1347D115009735CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7EC062D1347D115009735CD /* DU2_PARSER */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7EC062A1347D115009735CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7EC06331347D115009735CD /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A7EC06351347D115009735CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A7EC06361347D115009735CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A7EC06381347D115009735CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A7EC06391347D115009735CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7EC06281347D114009735CD /* Build configuration list for PBXProject "DU2_PARSER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7EC06351347D115009735CD /* Debug */,
+				A7EC06361347D115009735CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7EC06371347D115009735CD /* Build configuration list for PBXNativeTarget "DU2_PARSER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7EC06381347D115009735CD /* Debug */,
+				A7EC06391347D115009735CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7EC06251347D114009735CD /* Project object */;
+}
