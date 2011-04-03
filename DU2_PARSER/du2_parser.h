@@ -6,6 +6,7 @@
 //  Copyright 2011 MFF UK. All rights reserved.
 //
 
+#include <strings.h>
 
 template <template <typename> typename ConventionPolicy, typename CharType>
 class Parser {
@@ -17,6 +18,8 @@ public:
 	Parser() {
 		
 	}
+	
+	void addModifier()
 	
 	void run() {
 		
