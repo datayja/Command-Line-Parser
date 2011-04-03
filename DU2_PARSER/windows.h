@@ -5,3 +5,13 @@
 //  Created by Pavel Lisa on 3.4.11.
 //  Copyright 2011 MFF UK. All rights reserved.
 //
+
+
+template <typename CharType>
+class WindowsConvention {
+private:
+	WindowsConvention() {}
+	~WindowsConvention() {}
+public:
+	<#member functions#>
+};
