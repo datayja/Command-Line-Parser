@@ -6,11 +6,19 @@
 //  Copyright 2011 MFF UK. All rights reserved.
 //
 
+
+template <template <typename> typename ConventionPolicy, typename CharType>
 class Parser {
-	<#instance variables#>
+private: 
 	
 public:
+	
+	
 	Parser() {
+		
+	}
+	
+	void run() {
 		
 	}
 	
