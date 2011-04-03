@@ -27,6 +27,9 @@
 		A7EC06321347D115009735CD /* du2_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = du2_main.cpp; sourceTree = "<group>"; };
 		A7EC06341347D115009735CD /* DU2_PARSER.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DU2_PARSER.1; sourceTree = "<group>"; };
 		A7EC063A1347D150009735CD /* du2_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = du2_parser.h; sourceTree = "<group>"; };
+		A7EC064513487240009735CD /* unix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unix.h; sourceTree = "<group>"; };
+		A7EC064613487250009735CD /* windows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = windows.h; sourceTree = "<group>"; };
+		A7EC0647134872D8009735CD /* java.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = java.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +62,22 @@
 		A7EC06311347D115009735CD /* DU2_PARSER */ = {
 			isa = PBXGroup;
 			children = (
+				A7EC06431348722E009735CD /* conventions */,
 				A7EC06321347D115009735CD /* du2_main.cpp */,
 				A7EC063A1347D150009735CD /* du2_parser.h */,
 				A7EC06341347D115009735CD /* DU2_PARSER.1 */,
 			);
 			path = DU2_PARSER;
+			sourceTree = "<group>";
+		};
+		A7EC06431348722E009735CD /* conventions */ = {
+			isa = PBXGroup;
+			children = (
+				A7EC064513487240009735CD /* unix.h */,
+				A7EC064613487250009735CD /* windows.h */,
+				A7EC0647134872D8009735CD /* java.h */,
+			);
+			name = conventions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,7 @@
 				A7EC06391347D115009735CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
