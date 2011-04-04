@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		A7354391134A2BBE0073079D /* parser_value_functor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser_value_functor.h; sourceTree = "<group>"; };
 		A7354392134A2C0C0073079D /* default_value_functors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = default_value_functors.h; sourceTree = "<group>"; };
+		A7354394134A49140073079D /* unknown_modifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unknown_modifier.h; sourceTree = "<group>"; };
+		A7354396134A4BD60073079D /* known_modifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = known_modifier.h; sourceTree = "<group>"; };
 		A7EC062E1347D115009735CD /* DU2_PARSER */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DU2_PARSER; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EC06321347D115009735CD /* du2_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = du2_main.cpp; sourceTree = "<group>"; };
 		A7EC06341347D115009735CD /* DU2_PARSER.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DU2_PARSER.1; sourceTree = "<group>"; };
@@ -45,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7354393134A48C00073079D /* unknown_modifier */ = {
+			isa = PBXGroup;
+			children = (
+				A7354394134A49140073079D /* unknown_modifier.h */,
+			);
+			name = unknown_modifier;
+			sourceTree = "<group>";
+		};
+		A7354395134A4BC40073079D /* known_modifier */ = {
+			isa = PBXGroup;
+			children = (
+				A7354396134A4BD60073079D /* known_modifier.h */,
+			);
+			name = known_modifier;
+			sourceTree = "<group>";
+		};
 		A7EC06231347D114009735CD = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +82,8 @@
 		A7EC06311347D115009735CD /* DU2_PARSER */ = {
 			isa = PBXGroup;
 			children = (
+				A7354395134A4BC40073079D /* known_modifier */,
+				A7354393134A48C00073079D /* unknown_modifier */,
 				A7EC06481348B214009735CD /* values */,
 				A7EC06431348722E009735CD /* conventions */,
 				A7EC06321347D115009735CD /* du2_main.cpp */,

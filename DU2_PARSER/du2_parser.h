@@ -7,16 +7,18 @@
 //
 
 #include <string>
-#include <vector>
-#include "value_policy.h"
+#include <map>
+#include "parser_value_functor.h"
+#include "default_value_functors.h"
 #include "unix.h"
 
 template <template <typename> class ConventionPolicy, typename ParserCharType>
 class Parser {
 private: 
 	typedef std::basic_string<ParserCharType> string;
+	typedef std::map<string, ParserValueFunctor *> functor_map;
 	
-	std::vector<ValuePolicy<void*> > valpolicies;
+	functor_map value_functors;
 public:
 	
 	
@@ -30,7 +32,7 @@ public:
 	
 	template <typename ResultType>
 	void addModifier(const string & modifier, const unsigned int & mode, void * target_memory) {
-		valpolicies.push_back(new ValuePolicy<ResultType>());
+		
 	}
 	
 	void run() {

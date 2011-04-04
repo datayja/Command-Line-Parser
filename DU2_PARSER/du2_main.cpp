@@ -18,8 +18,6 @@ int main (int argc, const char * argv[])
 	
 	Parser<UNIXConvention, char> parser;
 	
-	
-	
     return 0;
 }
 
