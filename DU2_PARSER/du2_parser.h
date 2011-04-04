@@ -6,12 +6,17 @@
 //  Copyright 2011 MFF UK. All rights reserved.
 //
 
-#include <strings.h>
+#include <string>
+#include <vector>
+#include "value_policy.h"
+#include "unix.h"
 
-template <template <typename> typename ConventionPolicy, typename CharType>
+template <template <typename> class ConventionPolicy, typename ParserCharType>
 class Parser {
 private: 
+	typedef std::basic_string<ParserCharType> string;
 	
+	std::vector<ValuePolicy<void*> > valpolicies;
 public:
 	
 	
@@ -19,7 +24,14 @@ public:
 		
 	}
 	
-	void addModifier()
+	void addModifier(const string & modifier, const unsigned int & mode) {
+		
+	}
+	
+	template <typename ResultType>
+	void addModifier(const string & modifier, const unsigned int & mode, void * target_memory) {
+		valpolicies.push_back(new ValuePolicy<ResultType>());
+	}
 	
 	void run() {
 		

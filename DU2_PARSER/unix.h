@@ -12,5 +12,5 @@ private:
 	UNIXConvention() {}
 	~UNIXConvention() {}
 public:
-	<#member functions#>
+	void dosomething() {};
 };
