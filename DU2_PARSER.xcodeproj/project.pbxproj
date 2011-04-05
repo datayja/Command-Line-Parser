@@ -27,6 +27,9 @@
 		A7354392134A2C0C0073079D /* default_value_functors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = default_value_functors.h; sourceTree = "<group>"; };
 		A7354394134A49140073079D /* unknown_modifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unknown_modifier.h; sourceTree = "<group>"; };
 		A7354396134A4BD60073079D /* known_modifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = known_modifier.h; sourceTree = "<group>"; };
+		A7354397134A509A0073079D /* conventions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conventions.h; sourceTree = "<group>"; };
+		A7354399134A5E090073079D /* bad_modifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bad_modifier.h; sourceTree = "<group>"; };
+		A735439B134A5EF90073079D /* unexpected_arguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unexpected_arguments.h; sourceTree = "<group>"; };
 		A7EC062E1347D115009735CD /* DU2_PARSER */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DU2_PARSER; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EC06321347D115009735CD /* du2_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = du2_main.cpp; sourceTree = "<group>"; };
 		A7EC06341347D115009735CD /* DU2_PARSER.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DU2_PARSER.1; sourceTree = "<group>"; };
@@ -63,6 +66,22 @@
 			name = known_modifier;
 			sourceTree = "<group>";
 		};
+		A7354398134A5DE50073079D /* bad_modifier */ = {
+			isa = PBXGroup;
+			children = (
+				A7354399134A5E090073079D /* bad_modifier.h */,
+			);
+			name = bad_modifier;
+			sourceTree = "<group>";
+		};
+		A735439A134A5EE80073079D /* unexpected_arguments */ = {
+			isa = PBXGroup;
+			children = (
+				A735439B134A5EF90073079D /* unexpected_arguments.h */,
+			);
+			name = unexpected_arguments;
+			sourceTree = "<group>";
+		};
 		A7EC06231347D114009735CD = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +101,8 @@
 		A7EC06311347D115009735CD /* DU2_PARSER */ = {
 			isa = PBXGroup;
 			children = (
+				A735439A134A5EE80073079D /* unexpected_arguments */,
+				A7354398134A5DE50073079D /* bad_modifier */,
 				A7354395134A4BC40073079D /* known_modifier */,
 				A7354393134A48C00073079D /* unknown_modifier */,
 				A7EC06481348B214009735CD /* values */,
@@ -99,6 +120,7 @@
 				A7EC064513487240009735CD /* unix.h */,
 				A7EC064613487250009735CD /* windows.h */,
 				A7EC0647134872D8009735CD /* java.h */,
+				A7354397134A509A0073079D /* conventions.h */,
 			);
 			name = conventions;
 			sourceTree = "<group>";

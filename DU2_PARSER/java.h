@@ -12,5 +12,5 @@ private:
 	JavaConvention() {}
 	~JavaConvention() {}
 public:
-	<#member functions#>
+	void dosomething() {};
 };

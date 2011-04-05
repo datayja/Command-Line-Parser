@@ -8,32 +8,46 @@
 
 #include <vector>
 
-class UnknownModifierPolicy {
-public:
+struct UnknownModifierPolicy {
 	static const int THROW_EXCEPTION = 1;
 	static const int IGNORE = 2;
 	static const int IS_ARGUMENT = 3;
-	static const int ERROR = 3;
+	static const int ERROR = 4;
 };
 
-template<typename Policy> class UnknownModifier;
-
-template<>
-class UnknownModifier<UnknownModifierPolicy::THROW_EXCEPTION> {
+template<typename StringType>
+class UnknownModifierException {
 	int 
 	static 
-	deal(std::vector<char>) {}
+	deal(std::vector<StringType> app_args) {
+		return UnknownModifierPolicy::THROW_EXCEPTION;
+	}
 };
 
-class UnknownModifier  {
-	
+template<typename StringType>
+class UnknownModifierIgnore  {
+	int 
+	static 
+	deal(std::vector<StringType> app_args) {
+		return UnknownModifierPolicy::IGNORE;
+	}
 };
 
-class UnknownModifier {
-	
+template<typename StringType>
+class UnknownModifierIsArgument {
+	int 
+	static 
+	deal(std::vector<StringType> app_args) {
+		return UnknownModifierPolicy::IS_ARGUMENT;
+	}
 };
 
-class UnknownModifier {
-	
+template<typename StringType>
+class UnknownModifierError {
+	int 
+	static 
+	deal(std::vector<StringType> app_args) {
+		return UnknownModifierPolicy::ERROR;
+	}
 };
 

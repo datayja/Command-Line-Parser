@@ -16,7 +16,7 @@ int main (int argc, const char * argv[])
 	// insert code here...
 	std::cout << "Hello, World!\n";
 	
-	Parser<UNIXConvention, char> parser;
+	Parser<UNIXConvention, char, UnknownModifierIgnore, KnownModifierKeep> parser;
 	
     return 0;
 }

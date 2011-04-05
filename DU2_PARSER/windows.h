@@ -13,5 +13,5 @@ private:
 	WindowsConvention() {}
 	~WindowsConvention() {}
 public:
-	<#member functions#>
+	void dosomething() {};
 };

@@ -10,9 +10,21 @@
 #include <map>
 #include "parser_value_functor.h"
 #include "default_value_functors.h"
-#include "unix.h"
+#include "known_modifier.h"
+#include "unknown_modifier.h"
+#include "bad_modifier.h"
+#include "unexpected_arguments.h"
+#include "conventions.h"
 
-template <template <typename> class ConventionPolicy, typename ParserCharType>
+template 
+<
+	template <typename> class ConventionPolicy, 
+	typename ParserCharType, 
+	template <typename> class HandleUnknownModifier,
+	template <typename> class HandleKnownModifierKeep,
+	int HandleBadModifier = BadModifierPolicy::ERROR,
+	int HandleUnexpectedArguments = UnexpectedArgumentsPolicy::IGNORE
+>
 class Parser {
 private: 
 	typedef std::basic_string<ParserCharType> string;
@@ -35,8 +47,13 @@ public:
 		
 	}
 	
-	void run() {
+	void run(char ** & argv,int & argc) {
+		// start from 1st offset, keeping the executable name in args intact
+		int pc = 1;
 		
+		while (pc != argc) {
+			// working loop...
+		}
 	}
 	
 	~Parser() {}
