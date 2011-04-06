@@ -15,9 +15,25 @@ class DefaultValueFunctor : public ParserValueFunctor {
 public:
 	void operator()(void * in_value) {
 		std::cout << "calling default template!" << std::endl;
+		// cast void* to bool* and dereference
+		//*((FunctorValueType*)(this->stored_target)) = *in_value;
 	}
 	DefaultValueFunctor(void * in_target): ParserValueFunctor(in_target) {}
 };
+
+template<>
+class DefaultValueFunctor<bool*> : public ParserValueFunctor {
+public:
+	void operator()(void * in_value) {
+		// cast void* to bool* and dereference
+		*((bool*)(this->stored_target)) = true;
+	}
+	DefaultValueFunctor(void * in_target): ParserValueFunctor(in_target) {}
+};
+
+
+
+/* // customizations go like this: 
 
 template<>
 class DefaultValueFunctor<char*> : public ParserValueFunctor {
@@ -27,3 +43,4 @@ public:
 	}
 	DefaultValueFunctor(void * in_target): ParserValueFunctor(in_target) {}
 };
+*/

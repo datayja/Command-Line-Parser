@@ -7,7 +7,7 @@
 //
 
 class ParserValueFunctor {
-private:
+protected:
 	void * stored_target;
 public:
 	virtual void operator()(void * in_value) = 0;

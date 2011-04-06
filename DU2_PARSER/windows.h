@@ -7,7 +7,7 @@
 //
 
 
-template <typename CharType>
+template <typename StringType>
 class WindowsConvention {
 private:
 	WindowsConvention() {}
