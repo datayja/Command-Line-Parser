@@ -1,9 +1,5 @@
-//
-//  du2_parser.h
-//  DU2_PARSER
-//
-//  Created by Pavel Lisa on 2.4.11.
-//  Copyright 2011 MFF UK. All rights reserved.
+// DU2-ARG
+// Pavel Lisa NPRG051 2010/2011
 //
 
 #include <iostream>
@@ -44,6 +40,7 @@ private:
 	parser_string_set known_modifiers;
 	parser_string_set modifiers_with_parameters;
 	bool expect_arguments;
+	std::vector<parser_string> * in_args;
 public:
 	
 	
@@ -97,6 +94,11 @@ public:
 		modifiers_with_parameters.insert(ConventionPolicy<parser_string>::makeModifier(modifier));
 	}
 	
+	void putArgumentsInto(std::vector<parser_string> * input_args) {
+		expect_arguments = true;
+		in_args = input_args;
+	}
+	
 	void run(char ** & argv, int & argc) {
 		
 		// start from 1st offset, keeping the executable name in args intact
@@ -106,51 +108,80 @@ public:
 		// easily remove arguments later
 		// ... and convert to C-array
 		std::vector<parser_string> app_args;
-		for (int i = 0; i < argc; i++) {
-			app_args.push_back(argv[i]);
-		}
+		app_args.push_back(argv[0]);
 		
 		while (pc < argc) {
 			// working loop...
+			
 			if (known_modifiers.find(argv[pc]) != known_modifiers.end()) {
 				// must be a modifier ... and must be present in value_functors
+				// std::cout << "known, ";
 				
 				if (modifiers_with_parameters.find(argv[pc]) != modifiers_with_parameters.end()) {
 					if (pc != (argc-1)) {
 						// parse parameter value
-						
-						// SEM, TO DOLE NEMUSÍ UDĚLAT, CO PO NĚM CHCI
-						
+						// std::cout << "normal modifier, ";
 						(*value_functors[argv[pc]])(new std::string(argv[pc+1]));
 						pc++; // skip one argument, as it was the parameter
 					} else {
 						// missing required parameter
+						// std::cout << "no parameter! ";
+						switch (HandleBadModifier) {
+							case BadModifierPolicy::THROW_EXCEPTION:
+								throw "modifier missing argument";
+							case BadModifierPolicy::ERROR:
+								std::cerr << "modifier missing argument" << std::endl;
+								return;
+						}
 					}
 				} else {
 					// modifier without parameter
+					// std::cout << "presence modifier, ";
 					(*value_functors[argv[pc]])(0);
 				}
-			} else if (ConventionPolicy<parser_string>::mayBeModifier(argv[pc])) {
-				
-				// TOHLE SE NIKDY NESPUSTÍ, PROTOŽE FIND NAJDE ZAČÁTEK PŘEPÍNAČE - ZAPRACOVAT O VĚTEV NAHORU!!!!
-				
+			} else if (ConventionPolicy<parser_string>::mayBeModifierWithParam(argv[pc])) {
 				parser_string possible_modifier_name = ConventionPolicy<parser_string>::extractModifierName(argv[pc]);
-				if (known_modifiers.find(possible_modifier_name) != known_modifiers.end()) {
-					
+				
+				if (modifiers_with_parameters.find(possible_modifier_name) != modifiers_with_parameters.end()) {
 					parser_string possible_modifier_param = ConventionPolicy<parser_string>::extractModifierParam(argv[pc]);
 					
-					std::cout << "found modifier " << possible_modifier_name << " with param " << possible_modifier_param << std::endl;
+					// std::cout << "found modifier " << argv[pc] << " with param " << possible_modifier_param << std::endl;
+					(*value_functors[possible_modifier_name])(&possible_modifier_param);
 				} else {
-					// unknown strange argument
+					// std::cout << "suspicious argument, ";
+					int to_do = HandleUnknownModifier<parser_string>::deal(app_args, argv[pc]);
+					switch (to_do) {
+						case UnknownModifierPolicy::THROW_EXCEPTION:
+							throw "unknown modifier";
+						case UnknownModifierPolicy::ERROR:
+							std::cerr << "unknown modifier" << std::endl;
+							return;
+					}
 				}
 			} else {
-				// unknown modifier or some argument
+				// unknown modifier or some argument - would require a little extension to the Convention policy class to detect modifiers
+				// std::cout << "unknown modifier, ";
+				if (expect_arguments) {
+					app_args.push_back(argv[pc]);
+				} else {
+					int to_do = HandleUnknownModifier<parser_string>::deal(app_args, argv[pc]);
+					switch (to_do) {
+						case UnknownModifierPolicy::THROW_EXCEPTION:
+							throw "unknown modifier";
+						case UnknownModifierPolicy::ERROR:
+							std::cerr << "unknown modifier" << std::endl;
+							return;
+					}
+				}
 			}
 			
-			pc++; // TODO: remove, base on policies
+			pc++; 
 		}
 		
-		printf("%i", pc);
+		// printf("%i", pc);
+		if (expect_arguments) {
+			*in_args = app_args;
+		}
 	}
 	
 	~Parser() {

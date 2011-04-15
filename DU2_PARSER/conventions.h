@@ -1,8 +1,7 @@
+// DU2-ARG
+// Pavel Lisa NPRG051 2010/2011
 //
-//  conventions.h
-//  DU2_PARSER
-//
-//
+
 
 #include "unix.h"
 #include "windows.h"

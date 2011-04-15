@@ -1,10 +1,9 @@
+// DU2-ARG
+// Pavel Lisa NPRG051 2010/2011
 //
-//  value_policy.h
-//  DU2_PARSER
-//
-//  Created by Pavel Lisa on 3.4.11.
-//  Copyright 2011 MFF UK. All rights reserved.
-//
+
+
+#include <string>
 
 class ParserValueFunctor {
 protected:

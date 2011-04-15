@@ -1,10 +1,7 @@
+// DU2-ARG
+// Pavel Lisa NPRG051 2010/2011
 //
-//  unexpected_arguments.h
-//  DU2_PARSER
-//
-//  Created by Pavel Lisa on 4.4.11.
-//  Copyright 2011 MFF UK. All rights reserved.
-//
+
 
 class UnexpectedArgumentsPolicy {
 public:
